@@ -1,0 +1,44 @@
+.horse-line {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: 60px;
+  width: 100%;
+  border-top: 2px dashed black;
+
+  &-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    border: 2px solid #ffffff;
+    background-color: #588529;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  &__horse {
+    position: absolute;
+    left: 50px;
+
+    transition-property: left;
+    transition-timing-function: linear;
+
+    &.moving {
+      left: calc(100% - 50px);
+    }
+
+    &.no-transition {
+      transition: none !important;
+    }
+
+    &.paused {
+      opacity: 0.4;
+    }
+  }
+
+  svg {
+    width: 50px;
+    height: 58px;
+  }
+}
